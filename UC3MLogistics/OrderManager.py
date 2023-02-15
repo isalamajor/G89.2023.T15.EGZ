@@ -9,7 +9,21 @@ class OrderManager:
     def ValidateEAN13( self, eAn13 ):
         # PLEASE INCLUDE HERE THE CODE FOR VALIDATING THE GUID
         # RETURN TRUE IF THE GUID IS RIGHT, OR FALSE IN OTHER CASE
-        return True
+        print(eAn13)
+        print(type(eAn13))
+        try:
+            number = eAn13[:-1]
+            check = int(eAn13[-1])
+            count = 0
+            for i in number:
+                count += int(i)
+            if not count % 10 == check:
+                return False
+            return True
+        except:
+            raise Exception("Variable contains incorrect characters")
+
+
 
     def ReadproductcodefromJSON( self, fi ):
 
