@@ -9,14 +9,14 @@ class OrderManager:
     def ValidateEAN13( self, eAn13 ):
         # PLEASE INCLUDE HERE THE CODE FOR VALIDATING THE GUID
         # RETURN TRUE IF THE GUID IS RIGHT, OR FALSE IN OTHER CASE
-        print(eAn13)
-        print(type(eAn13))
         try:
             number = eAn13[:-1]
             check = int(eAn13[-1])
             count = 0
+            mult = 1
             for i in number:
-                count += int(i)
+                count += int(i)*mult
+                mult = 1 if mult == 3 else 3
             if not count % 10 == check:
                 return False
             return True
