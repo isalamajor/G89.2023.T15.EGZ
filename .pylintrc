@@ -305,7 +305,7 @@ argument-naming-style=snake_case
 #argument-rgx=
 
 # Naming style matching correct attribute names.
-attr-naming-style=snake_case
+attr-naming-style=any
 
 # Regular expression matching correct attribute names. Overrides attr-naming-
 # style.
@@ -356,7 +356,7 @@ const-naming-style=UPPER_CASE
 docstring-min-length=-1
 
 # Naming style matching correct function names.
-function-naming-style=snake_case
+function-naming-style=camelCase
 
 # Regular expression matching correct function names. Overrides function-
 # naming-style.
@@ -366,6 +366,8 @@ function-naming-style=snake_case
 good-names=i,
            j,
            k,
+           x,
+           y,
            ex,
            Run,
            _
@@ -385,7 +387,7 @@ inlinevar-naming-style=any
 #inlinevar-rgx=
 
 # Naming style matching correct method names.
-method-naming-style=snake_case
+method-naming-style=camelCase
 
 # Regular expression matching correct method names. Overrides method-naming-
 # style.
@@ -412,11 +414,11 @@ no-docstring-rgx=^_
 property-classes=abc.abstractproperty
 
 # Naming style matching correct variable names.
-variable-naming-style=snake_case
+#variable-naming-style=snake_case
 
 # Regular expression matching correct variable names. Overrides variable-
 # naming-style.
-#variable-rgx=
+variable-rgx=[a-zA-Z][a-z0-9_]{1,60}
 
 
 [VARIABLES]
@@ -445,7 +447,7 @@ dummy-variables-rgx=_+$|(_[a-zA-Z0-9_]*[a-zA-Z0-9]+?$)|dummy|^ignored_|^unused_
 ignored-argument-names=_.*|^ignored_|^unused_
 
 # Tells whether we should check for unused import in __init__ files.
-init-import=no
+init-import=
 
 # List of qualified module names which can have objects that can redefine
 # builtins.
@@ -463,7 +465,7 @@ exclude-too-few-public-methods=
 ignored-parents=
 
 # Maximum number of arguments for function / method.
-max-args=5
+max-args=
 
 # Maximum number of attributes for a class (see R0902).
 max-attributes=7
