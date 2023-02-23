@@ -447,7 +447,7 @@ dummy-variables-rgx=_+$|(_[a-zA-Z0-9_]*[a-zA-Z0-9]+?$)|dummy|^ignored_|^unused_
 ignored-argument-names=_.*|^ignored_|^unused_
 
 # Tells whether we should check for unused import in __init__ files.
-init-import=
+init-import=yes
 
 # List of qualified module names which can have objects that can redefine
 # builtins.
@@ -465,7 +465,7 @@ exclude-too-few-public-methods=
 ignored-parents=
 
 # Maximum number of arguments for function / method.
-max-args=
+max-args=7
 
 # Maximum number of attributes for a class (see R0902).
 max-attributes=7
