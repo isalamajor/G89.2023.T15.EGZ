@@ -6,7 +6,7 @@ class OrderManager:
     def __init__(self):
         pass
 
-    def ValidateEAN13( self, eAn13 ):
+    def validateEAN13(self, eAn13):
         # PLEASE INCLUDE HERE THE CODE FOR VALIDATING THE GUID
         # RETURN TRUE IF THE GUID IS RIGHT, OR FALSE IN OTHER CASE
         try:
@@ -25,11 +25,11 @@ class OrderManager:
 
 
 
-    def ReadproductcodefromJSON( self, fi ):
+    def readproductcodefromJSON(self, fi):
 
         try:
             with open(fi) as f:
-                DATA = json.load(f)
+                Data = json.load(f)
         except FileNotFoundError as e:
             raise OrderManagementException("Wrong file or file path") from e
         except json.JSONDecodeError as e:
@@ -37,12 +37,12 @@ class OrderManager:
 
 
         try:
-            PRODUCT = DATA["id"]
-            PH = DATA["phoneNumber"]
-            req = OrderRequest(PRODUCT, PH)
+            Product = Data["id"]
+            Ph = Data["phoneNumber"]
+            req = OrderRequest(Product, Ph)
         except KeyError as e:
             raise OrderManagementException("JSON Decode Error - Invalid JSON Key") from e
-        if not self.ValidateEAN13(PRODUCT):
+        if not self.validateEAN13(Product):
             raise OrderManagementException("Invalid PRODUCT code")
 
         # Close the file
